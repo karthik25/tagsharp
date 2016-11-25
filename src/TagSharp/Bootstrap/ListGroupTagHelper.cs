@@ -35,6 +35,7 @@ namespace TagSharp.Bootstrap
                 listContent = listContentAwaiter.GetContent();
             }
 
+            output.TagName = "";
             output.Content.AppendHtml(listContent);
         }
     }
