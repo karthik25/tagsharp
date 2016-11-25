@@ -4,7 +4,20 @@
 
 <br />
 
+@{ 
+    var list = new List<string>
+    {
+        "Item one",
+        "Item two",
+        "Item three"
+    };
+}
+
 <div class="row">
+    <ts-bootstrap-list-group bs-list-items="list">
+
+    </ts-bootstrap-list-group>
+
     <ts-bootstrap-alert>
         <div>
             Hello! This is the default alert!!
