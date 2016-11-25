@@ -4,8 +4,8 @@ using TagSharp.Context;
 
 namespace TagSharp.Bootstrap
 {    
-    [RestrictChildren("bootstrap-panel-header", "bootstrap-panel-body", "bootstrap-panel-footer")]
-    [HtmlTargetElement("bootstrap-panel")]
+    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
+    [HtmlTargetElement("ts-bootstrap-panel")]
     public class PanelTagHelper : TagHelper
     {
         private const string CssClassAttributeName = "bs-css-class";

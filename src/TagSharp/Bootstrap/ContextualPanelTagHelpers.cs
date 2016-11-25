@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap
 {
-    [RestrictChildren("bootstrap-panel-header", "bootstrap-panel-body", "bootstrap-panel-footer")]
-    [HtmlTargetElement("bootstrap-panel-success")]
+    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
+    [HtmlTargetElement("ts-bootstrap-panel-success")]
     public class PanelSuccessTagHelper : PanelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -14,8 +14,8 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [RestrictChildren("bootstrap-panel-header", "bootstrap-panel-body", "bootstrap-panel-footer")]
-    [HtmlTargetElement("bootstrap-panel-warning")]
+    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
+    [HtmlTargetElement("ts-bootstrap-panel-warning")]
     public class PanelWarningTagHelper : PanelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -25,8 +25,8 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [RestrictChildren("bootstrap-panel-header", "bootstrap-panel-body", "bootstrap-panel-footer")]
-    [HtmlTargetElement("bootstrap-panel-danger")]
+    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
+    [HtmlTargetElement("ts-bootstrap-panel-danger")]
     public class PanelDangerTagHelper : PanelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -36,8 +36,8 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [RestrictChildren("bootstrap-panel-header", "bootstrap-panel-body", "bootstrap-panel-footer")]
-    [HtmlTargetElement("bootstrap-panel-primary")]
+    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
+    [HtmlTargetElement("ts-bootstrap-panel-primary")]
     public class PanelPrimaryTagHelper : PanelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -47,8 +47,8 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [RestrictChildren("bootstrap-panel-header", "bootstrap-panel-body", "bootstrap-panel-footer")]
-    [HtmlTargetElement("bootstrap-panel-info")]
+    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
+    [HtmlTargetElement("ts-bootstrap-panel-info")]
     public class PanelInfoTagHelper : PanelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
