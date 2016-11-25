@@ -21,20 +21,29 @@ namespace TagSharp.Bootstrap
             await output.GetChildContentAsync();
 
             var template = @"<div class=""panel {3}"">
-                              <div class=""panel-heading"">
-                                <h3 class=""panel-title"">{0}</h3>
-                              </div>
-                              <div class=""panel-body"">
-                                {1}
-                              </div>
-                              <div class=""panel-footer"">
-                                <h3 class=""panel-title"">{2}</h3>
-                              </div>
+                              {0}
+                              {1}
+                              {2}
                             </div>";
 
             output.TagName = "";
             var cssClass = !string.IsNullOrEmpty(CssClass) ? CssClass : "panel-default";
-            output.Content.AppendHtml(string.Format(template, modalContext.Header, modalContext.Body, modalContext.Footer, cssClass));
+            output.Content.AppendHtml(string.Format(template, 
+                                                    GetSectionContent("panel-heading", modalContext.Header), 
+                                                    GetSectionContent("panel-body", modalContext.Body), 
+                                                    GetSectionContent("panel-footer", modalContext.Footer), 
+                                                    cssClass));
         }
+
+        private static string GetSectionContent(string sectionClass, string sectionContent)
+        {
+            if (string.IsNullOrEmpty(sectionContent))
+                return string.Empty;
+            return string.Format(sectionTemplate, sectionClass, sectionContent);
+        }
+
+        private const string sectionTemplate = @"<div class=""{0}"">
+                                                    {1}
+                                                 </div>";
     }
 }
