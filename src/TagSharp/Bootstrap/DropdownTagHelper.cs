@@ -9,6 +9,15 @@ namespace TagSharp.Bootstrap
     [HtmlTargetElement("ts-bootstrap-dropdown")]
     public class DropdownTagHelper : TagHelper
     {
+        private const string TypeAttributeName = "bs-type";
+        private const string CssClassAttributeName = "bs-css-class";
+
+        [HtmlAttributeName(TypeAttributeName)]
+        public string Type { get; set; }
+
+        [HtmlAttributeName(CssClassAttributeName)]
+        public string CssClass { get; set; }
+
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             var contentContext = new MultipleItemsContext();
@@ -16,14 +25,88 @@ namespace TagSharp.Bootstrap
 
             await output.GetChildContentAsync();
 
-            var template = @"<div class=""dropdown"">
+            var template = @"<div class=""{2}"">
                                 {0}
                                 <ul class=""dropdown-menu"">
                                  {1}
                                 </ul>
                               </div>";
-            var finalContent = string.Format(template, contentContext.Header, string.Join("", contentContext.Items.ToArray()));
+            var type = !string.IsNullOrEmpty(Type) ? Type : "dropdown";
+            var cssClass = !string.IsNullOrEmpty(CssClass) ? CssClass : "btn-default";
+            var items = string.Join("", contentContext.Items.ToArray());
+            var finalContent = string.Format(template,
+                                             contentContext.Header.Replace("[addOn]", cssClass), 
+                                             items,
+                                             type);
+
+            output.TagName = "";
             output.Content.AppendHtml(finalContent);
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-btn-dropdown")]
+    public class DropdownButtonTagHelper : DropdownTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.Type = "btn-group";
+            this.CssClass = "btn-default";
+            return base.ProcessAsync(context, output);
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-btn-success-dropdown")]
+    public class DropdownSuccessButtonTagHelper : DropdownTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.Type = "btn-group";
+            this.CssClass = "btn-success";
+            return base.ProcessAsync(context, output);
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-btn-primary-dropdown")]
+    public class DropdownPrimaryButtonTagHelper : DropdownTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.Type = "btn-group";
+            this.CssClass = "btn-primary";
+            return base.ProcessAsync(context, output);
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-btn-info-dropdown")]
+    public class DropdownInfoButtonTagHelper : DropdownTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.Type = "btn-group";
+            this.CssClass = "btn-info";
+            return base.ProcessAsync(context, output);
+        }
+    }
+    
+    [HtmlTargetElement("ts-bootstrap-btn-danger-dropdown")]
+    public class DropdownDangerButtonTagHelper : DropdownTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.Type = "btn-group";
+            this.CssClass = "btn-danger";
+            return base.ProcessAsync(context, output);
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-btn-warning-dropdown")]
+    public class DropdownWarningButtonTagHelper : DropdownTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.Type = "btn-group";
+            this.CssClass = "btn-warning";
+            return base.ProcessAsync(context, output);
         }
     }
 
@@ -36,7 +119,7 @@ namespace TagSharp.Bootstrap
             var awaiter = await output.GetChildContentAsync();
             var content = awaiter.GetContent();
 
-            var template = @"<button class=""btn btn-default dropdown-toggle"" type=""button"" 
+            var template = @"<button class=""btn [addOn] dropdown-toggle"" type=""button"" 
                                      data-toggle=""dropdown"" aria-haspopup=""true"" 
                                      aria-expanded=""true"">
                                {0}
