@@ -52,15 +52,18 @@ namespace TagSharp.Bootstrap
     [HtmlTargetElement("ts-bootstrap-dropdown-list")]
     public class DropdownListTagHelper : TagHelper
     {
-        public override void Process(TagHelperContext context, TagHelperOutput output)
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             var contentContext = (IMultipleItemsContext)context.Items[typeof(DropdownTagHelper)];
             contentContext.Items = new List<string>();
+
+            await output.GetChildContentAsync();
+
             output.SuppressOutput();
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-dropdown-item")]
+    [HtmlTargetElement("ts-bootstrap-dropdown-item", ParentTag = "ts-bootstrap-dropdown-list")]
     public class DropdownItemTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -75,7 +78,7 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-dropdown-seperator")]
+    [HtmlTargetElement("ts-bootstrap-dropdown-seperator", ParentTag = "ts-bootstrap-dropdown-list")]
     public class DropdownItemSeperatorTagHelper : TagHelper
     {
         public override void Process(TagHelperContext context, TagHelperOutput output)
