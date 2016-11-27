@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace TagSharp.Bootstrap
 {
-    [HtmlTargetElement("ts-bootstrap-modal")]
+    [HtmlTargetElement("ts-bootstrap-tabs")]
     public class TabsTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -31,7 +31,7 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-modal-items")]
+    [HtmlTargetElement("ts-bootstrap-tab-items")]
     public class TabItemHolderTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -45,7 +45,7 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-modal-contents")]
+    [HtmlTargetElement("ts-bootstrap-tab-contents")]
     public class TagContentHolderTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -59,7 +59,7 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-modal-item")]
+    [HtmlTargetElement("ts-bootstrap-tab-item")]
     public class TabItemTagHelper : TagHelper
     {
         private const string LinkAttributeName = "bs-item-link";
@@ -84,7 +84,7 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-modal-content")]
+    [HtmlTargetElement("ts-bootstrap-tab-content")]
     public class TabContentTagHelper : TagHelper
     {
         private const string LinkAttributeName = "bs-item-link";
@@ -102,7 +102,7 @@ namespace TagSharp.Bootstrap
 
             var awaiter = await output.GetChildContentAsync();
             var content = awaiter.GetContent();
-            var cssClass = contentModel.Items.Count == 0 ? "active" : "";
+            var cssClass = contentModel.Contents.Count == 0 ? "active" : "";
             var contentContent = string.Format(template, cssClass, Link, content);
 
             contentModel.Contents.Add(contentContent);
