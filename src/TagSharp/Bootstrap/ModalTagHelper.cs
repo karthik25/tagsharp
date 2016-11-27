@@ -1,0 +1,88 @@
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using TagSharp.Context;
+using TagSharp.Abstract;
+
+namespace TagSharp.Bootstrap
+{
+    [HtmlTargetElement("ts-bootstrap-modal")]
+    public class ModalTagHelper : TagHelper
+    {
+        private const string IdentifierAttributeName = "bs-modal-id";
+
+        [HtmlAttributeName(IdentifierAttributeName)]
+        public string Identifier { get; set; }
+
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            var contentModel = new BasicContext();
+            context.Items.Add(typeof(ModalTagHelper), contentModel);
+
+            await output.GetChildContentAsync();
+
+            var template = @"<div class=""modal fade"" id=""{0}"" tabindex=""-1"" role=""dialog"">
+                              <div class=""modal-dialog"" role=""document"">
+                                <div class=""modal-content"">
+                                  {1}
+                                  {2}
+                                  {3}
+                                </div>
+                              </div>
+                            </div>";
+            var content = string.Format(template,
+                                        Identifier,
+                                        GetSectionContent("modal-header", contentModel.Header),
+                                        GetSectionContent("modal-body", contentModel.Body),
+                                        GetSectionContent("modal-footer", contentModel.Footer));
+
+            output.Content.AppendHtml(content);
+        }
+
+        private static string GetSectionContent(string sectionClass, string sectionContent)
+        {
+            if (string.IsNullOrEmpty(sectionContent))
+                return string.Empty;
+            return string.Format(sectionTemplate, sectionClass, sectionContent);
+        }
+
+        private const string sectionTemplate = @"<div class=""{0}"">
+                                                    {1}
+                                                 </div>";
+    }
+
+    [HtmlTargetElement("ts-bootstrap-modal-header")]
+    public class ModalHeaderTagHelper : TagHelper
+    {
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
+            var awaiter = await output.GetChildContentAsync();
+            contentModel.Header = awaiter.GetContent();
+            output.SuppressOutput();
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-modal-body")]
+    public class ModalBodyTagHelper : TagHelper
+    {
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
+            var awaiter = await output.GetChildContentAsync();
+            contentModel.Body = awaiter.GetContent();
+            output.SuppressOutput();
+        }
+    }
+
+    [HtmlTargetElement("ts-bootstrap-modal-footer")]
+    public class ModalFooterTagHelper : TagHelper
+    {
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
+            var awaiter = await output.GetChildContentAsync();
+            contentModel.Footer = awaiter.GetContent();
+            output.SuppressOutput();
+        }
+    }
+}

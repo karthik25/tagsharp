@@ -14,6 +14,29 @@
 }
 
 <div class="row">
+    <ts-bootstap-launcher bs-modal-id="sampleModal" bs-css-class="btn btn-primary">
+        Open Sample Modal
+    </ts-bootstap-launcher>
+
+    <br />
+    <br />
+
+    <ts-bootstrap-modal bs-modal-id="sampleModal">
+        <ts-bootstrap-modal-header>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </ts-bootstrap-modal-header>
+        <ts-bootstrap-modal-body>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+            make a type specimen book.
+        </ts-bootstrap-modal-body>
+        <ts-bootstrap-modal-footer>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success">Save changes</button>
+        </ts-bootstrap-modal-footer>
+    </ts-bootstrap-modal>
+
     <ts-bootstrap-tabs>
         <ts-bootstrap-tab-items>
             <ts-bootstrap-tab-item bs-item-link="first" bs-item-text="First"></ts-bootstrap-tab-item>
