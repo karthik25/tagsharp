@@ -14,5 +14,10 @@ namespace TagSharp.Context
         {
             get; set;
         }
+
+        public List<string> Contents
+        {
+            get; set;
+        }
     }
 }

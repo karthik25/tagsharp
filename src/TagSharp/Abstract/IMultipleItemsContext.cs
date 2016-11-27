@@ -6,5 +6,6 @@ namespace TagSharp.Abstract
     {
         string Header { get; set; }
         List<string> Items { get; set; }
+        List<string> Contents { get; set; }
     }
 }
