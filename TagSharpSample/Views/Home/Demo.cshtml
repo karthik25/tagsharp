@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Tag# :: Demo";
+}
+
+<h3><strong>Panels</strong></h3>
+<br />
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
+<script>hljs.initHighlightingOnLoad();</script>
+
+<ts-bootstrap-tabs>
+    <ts-bootstrap-tab-items>
+        <ts-bootstrap-tab-item bs-item-link="tabs-src" bs-item-text="Markup"></ts-bootstrap-tab-item>
+        <ts-bootstrap-tab-item bs-item-link="tabs-demo" bs-item-text="Demo"></ts-bootstrap-tab-item>
+    </ts-bootstrap-tab-items>
+    <ts-bootstrap-tab-contents>
+        <ts-bootstrap-tab-content bs-item-link="tabs-src">
+            <br />
+            <br />
+            <ts-bootstrap-well>
+                <code class="html">
+                    &lt;ts-bootstrap-panel&gt;<br />
+                    &lt;ts-bootstrap-panel-header&gt;<br />
+                    &lt;strong&gt;Default Panel&lt;/strong&gt;<br />
+                    &lt;/ts-bootstrap-panel-header&gt;<br />
+                    &lt;ts-bootstrap-panel-body&gt;<br />
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.<br />
+                    &lt;/ts-bootstrap-panel-body&gt;<br />
+                    &lt;/ts-bootstrap-panel&gt;
+                </code>
+            </ts-bootstrap-well>
+        </ts-bootstrap-tab-content>
+        <ts-bootstrap-tab-content bs-item-link="tabs-demo">
+            <br />
+            <br />
+            <ts-bootstrap-panel>
+                <ts-bootstrap-panel-header>
+                    <strong>Default Panel</strong>
+                </ts-bootstrap-panel-header>
+                <ts-bootstrap-panel-body>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </ts-bootstrap-panel-body>
+            </ts-bootstrap-panel>
+        </ts-bootstrap-tab-content>
+    </ts-bootstrap-tab-contents>
+</ts-bootstrap-tabs>
