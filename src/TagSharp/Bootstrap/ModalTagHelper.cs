@@ -49,40 +49,4 @@ namespace TagSharp.Bootstrap
                                                     {1}
                                                  </div>";
     }
-
-    [HtmlTargetElement("ts-bootstrap-modal-header")]
-    public class ModalHeaderTagHelper : TagHelper
-    {
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
-            var awaiter = await output.GetChildContentAsync();
-            contentModel.Header = awaiter.GetContent();
-            output.SuppressOutput();
-        }
-    }
-
-    [HtmlTargetElement("ts-bootstrap-modal-body")]
-    public class ModalBodyTagHelper : TagHelper
-    {
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
-            var awaiter = await output.GetChildContentAsync();
-            contentModel.Body = awaiter.GetContent();
-            output.SuppressOutput();
-        }
-    }
-
-    [HtmlTargetElement("ts-bootstrap-modal-footer")]
-    public class ModalFooterTagHelper : TagHelper
-    {
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
-            var awaiter = await output.GetChildContentAsync();
-            contentModel.Footer = awaiter.GetContent();
-            output.SuppressOutput();
-        }
-    }
 }
