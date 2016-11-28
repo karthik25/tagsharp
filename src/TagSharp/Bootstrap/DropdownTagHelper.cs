@@ -11,12 +11,16 @@ namespace TagSharp.Bootstrap
     {
         private const string TypeAttributeName = "bs-type";
         private const string CssClassAttributeName = "bs-css-class";
+        private const string IdAttributeName = "bs-dropdown-id";
 
         [HtmlAttributeName(TypeAttributeName)]
         public string Type { get; set; }
 
         [HtmlAttributeName(CssClassAttributeName)]
         public string CssClass { get; set; }
+
+        [HtmlAttributeName(IdAttributeName)]
+        public string Id { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
@@ -25,7 +29,7 @@ namespace TagSharp.Bootstrap
 
             await output.GetChildContentAsync();
 
-            var template = @"<div class=""{2}"">
+            var template = @"<div class=""{2}"" {3}>
                                 {0}
                                 <ul class=""dropdown-menu"">
                                  {1}
@@ -33,11 +37,14 @@ namespace TagSharp.Bootstrap
                               </div>";
             var type = !string.IsNullOrEmpty(Type) ? Type : "dropdown";
             var cssClass = !string.IsNullOrEmpty(CssClass) ? CssClass : "btn-default";
+            var idAttr = !string.IsNullOrEmpty(Id) ? string.Format(@"id=""{0}""", Id) : "";
+
             var items = string.Join("", contentContext.Items.ToArray());
             var finalContent = string.Format(template,
                                              contentContext.Header.Replace("[addOn]", cssClass), 
                                              items,
-                                             type);
+                                             type,
+                                             idAttr);
 
             output.TagName = "";
             output.Content.AppendHtml(finalContent);
