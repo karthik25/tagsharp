@@ -3,6 +3,16 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap
 {
+    [HtmlTargetElement("ts-bootstrap-alert-success")]
+    public class AlertSuccessTagHelper : AlertTagHelper
+    {
+        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        {
+            this.CssClass = "alert-success";
+            return base.ProcessAsync(context, output);
+        }
+    }
+
     [HtmlTargetElement("ts-bootstrap-alert-info")]
     public class AlertInfoTagHelper : AlertTagHelper
     {
