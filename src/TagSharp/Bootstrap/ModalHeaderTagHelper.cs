@@ -11,7 +11,7 @@ namespace TagSharp.Bootstrap
         {
             var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
             var awaiter = await output.GetChildContentAsync();
-            contentModel.Header = awaiter.GetContent();
+            contentModel.Heading = awaiter.GetContent();
             output.SuppressOutput();
         }
     }

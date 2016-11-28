@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 using TagSharp.Context;
+using TagSharp.Extensions;
 
 namespace TagSharp.Bootstrap
 {    
@@ -29,21 +30,10 @@ namespace TagSharp.Bootstrap
             output.TagName = "";
             var cssClass = !string.IsNullOrEmpty(CssClass) ? CssClass : "panel-default";
             output.Content.AppendHtml(string.Format(template, 
-                                                    GetSectionContent("panel-heading", modalContext.Header), 
-                                                    GetSectionContent("panel-body", modalContext.Body), 
-                                                    GetSectionContent("panel-footer", modalContext.Footer), 
+                                                    modalContext.Heading.GetSectionContent("panel-heading"),
+                                                    modalContext.Body.GetSectionContent("panel-body"),
+                                                    modalContext.Footer.GetSectionContent("panel-footer"), 
                                                     cssClass));
         }
-
-        private static string GetSectionContent(string sectionClass, string sectionContent)
-        {
-            if (string.IsNullOrEmpty(sectionContent))
-                return string.Empty;
-            return string.Format(sectionTemplate, sectionClass, sectionContent);
-        }
-
-        private const string sectionTemplate = @"<div class=""{0}"">
-                                                    {1}
-                                                 </div>";
     }
 }

@@ -11,7 +11,7 @@ namespace TagSharp.Bootstrap
         {
             var modalContext = (IBasicContext)context.Items[typeof(PanelTagHelper)];
             var content = await output.GetChildContentAsync();
-            modalContext.Header = content.GetContent();
+            modalContext.Heading = content.GetContent();
             output.SuppressOutput();
         }
     }

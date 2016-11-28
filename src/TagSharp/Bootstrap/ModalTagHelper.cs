@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using TagSharp.Context;
-using TagSharp.Abstract;
+using TagSharp.Extensions;
 
 namespace TagSharp.Bootstrap
 {
@@ -31,22 +31,11 @@ namespace TagSharp.Bootstrap
                             </div>";
             var content = string.Format(template,
                                         Identifier,
-                                        GetSectionContent("modal-header", contentModel.Header),
-                                        GetSectionContent("modal-body", contentModel.Body),
-                                        GetSectionContent("modal-footer", contentModel.Footer));
+                                        contentModel.Heading.GetSectionContent("modal-header"),
+                                        contentModel.Body.GetSectionContent("modal-body"),
+                                        contentModel.Footer.GetSectionContent("modal-footer"));
 
             output.Content.AppendHtml(content);
         }
-
-        private static string GetSectionContent(string sectionClass, string sectionContent)
-        {
-            if (string.IsNullOrEmpty(sectionContent))
-                return string.Empty;
-            return string.Format(sectionTemplate, sectionClass, sectionContent);
-        }
-
-        private const string sectionTemplate = @"<div class=""{0}"">
-                                                    {1}
-                                                 </div>";
     }
 }
