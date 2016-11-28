@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Wells
 {
     [HtmlTargetElement("ts-bootstrap-well-sm")]
     public class WellSmallTagHelper : WellTagHelper

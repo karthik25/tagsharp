@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Dropdowns
 {
     [HtmlTargetElement("ts-bootstrap-btn-success-dropdown")]
     public class DropdownSuccessButtonTagHelper : DropdownTagHelper

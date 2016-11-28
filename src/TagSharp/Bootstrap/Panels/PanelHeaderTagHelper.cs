@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using TagSharp.Abstract;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Panels
 {
     [HtmlTargetElement("ts-bootstrap-panel-header")]
     public class PanelHeaderTagHelper : TagHelper

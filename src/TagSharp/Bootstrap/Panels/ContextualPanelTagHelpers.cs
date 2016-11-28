@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Panels
 {
     [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
     [HtmlTargetElement("ts-bootstrap-panel-success")]

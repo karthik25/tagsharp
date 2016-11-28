@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using TagSharp.Context;
 using TagSharp.Extensions;
 
-namespace TagSharp.Bootstrap
-{    
+namespace TagSharp.Bootstrap.Panels
+{
     [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
     [HtmlTargetElement("ts-bootstrap-panel")]
     public class PanelTagHelper : TagHelper

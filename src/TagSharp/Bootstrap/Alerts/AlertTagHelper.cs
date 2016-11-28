@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Alerts
 {
     [HtmlTargetElement("ts-bootstrap-alert")]
     public class AlertTagHelper : TagHelper

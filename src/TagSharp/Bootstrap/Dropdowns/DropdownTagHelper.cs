@@ -4,7 +4,7 @@ using TagSharp.Abstract;
 using TagSharp.Context;
 using System.Collections.Generic;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Dropdowns
 {
     [HtmlTargetElement("ts-bootstrap-dropdown")]
     public class DropdownTagHelper : TagHelper

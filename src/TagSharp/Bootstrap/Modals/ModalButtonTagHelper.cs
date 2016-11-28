@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using System.Threading.Tasks;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Modals
 {
     [HtmlTargetElement("ts-bootstap-launcher")]
     public class ModalButtonTagHelper : TagHelper

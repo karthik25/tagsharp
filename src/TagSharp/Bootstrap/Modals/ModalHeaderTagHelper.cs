@@ -2,16 +2,16 @@
 using System.Threading.Tasks;
 using TagSharp.Abstract;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Modals
 {
-    [HtmlTargetElement("ts-bootstrap-modal-body")]
-    public class ModalBodyTagHelper : TagHelper
+    [HtmlTargetElement("ts-bootstrap-modal-header")]
+    public class ModalHeaderTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             var contentModel = (IBasicContext)context.Items[typeof(ModalTagHelper)];
             var awaiter = await output.GetChildContentAsync();
-            contentModel.Body = awaiter.GetContent();
+            contentModel.Heading = awaiter.GetContent();
             output.SuppressOutput();
         }
     }

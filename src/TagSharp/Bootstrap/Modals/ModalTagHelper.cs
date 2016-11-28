@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using TagSharp.Context;
 using TagSharp.Extensions;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.Modals
 {
     [HtmlTargetElement("ts-bootstrap-modal")]
     public class ModalTagHelper : TagHelper
