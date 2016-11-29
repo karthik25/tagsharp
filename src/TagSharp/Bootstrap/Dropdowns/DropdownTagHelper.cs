@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using TagSharp.Abstract;
 using TagSharp.Context;
-using System.Collections.Generic;
 
 namespace TagSharp.Bootstrap.Dropdowns
 {
@@ -48,70 +46,6 @@ namespace TagSharp.Bootstrap.Dropdowns
 
             output.TagName = "";
             output.Content.AppendHtml(finalContent);
-        }
-    }
-
-    [HtmlTargetElement("ts-button")]
-    public class DropdownLauncherTagHelper : TagHelper
-    {
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentContext = (IMultipleItemsContext)context.Items[typeof(DropdownTagHelper)];
-            var awaiter = await output.GetChildContentAsync();
-            var content = awaiter.GetContent();
-
-            var template = @"<button class=""btn [addOn] dropdown-toggle"" type=""button"" 
-                                     data-toggle=""dropdown"" aria-haspopup=""true"" 
-                                     aria-expanded=""true"">
-                               {0}
-                               <span class=""caret""></span>
-                             </button>";
-            var launcher = string.Format(template, content);
-
-            contentContext.Header = launcher;
-            output.SuppressOutput();
-        }
-    }
-
-    [HtmlTargetElement("ts-dropdown-list")]
-    public class DropdownListTagHelper : TagHelper
-    {
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentContext = (IMultipleItemsContext)context.Items[typeof(DropdownTagHelper)];
-            contentContext.Items = new List<string>();
-
-            await output.GetChildContentAsync();
-
-            output.SuppressOutput();
-        }
-    }
-
-    [HtmlTargetElement("ts-dropdown-item", ParentTag = "ts-dropdown-list")]
-    public class DropdownItemTagHelper : TagHelper
-    {
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentContext = (IMultipleItemsContext)context.Items[typeof(DropdownTagHelper)];
-            var awaiter = await output.GetChildContentAsync();
-            var content = awaiter.GetContent();
-
-            var template = @"<li>{0}</li>";
-            contentContext.Items.Add(string.Format(template, content));
-            output.SuppressOutput();
-        }
-    }
-
-    [HtmlTargetElement("ts-dropdown-seperator", ParentTag = "ts-dropdown-list")]
-    public class DropdownItemSeperatorTagHelper : TagHelper
-    {
-        public override void Process(TagHelperContext context, TagHelperOutput output)
-        {
-            var contentContext = (IMultipleItemsContext)context.Items[typeof(DropdownTagHelper)];
-            var seperator = @"<li role=""separator"" class=""divider""></li>";
-
-            contentContext.Items.Add(seperator);
-            output.SuppressOutput();
         }
     }
 }
