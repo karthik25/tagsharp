@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace TagSharp.Bootstrap.Wells
 {
     [HtmlTargetElement("ts-well")]
-    public class WellTagHelper : TagHelper
+    public class WellTagHelper : BaseTagHelper
     {
         private const string CssClassAttributeName = "bs-css-class";
 
@@ -13,14 +13,11 @@ namespace TagSharp.Bootstrap.Wells
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var template = @"<div class=""{0}"">{1}</div>";
-            var childContentAwaiter = await output.GetChildContentAsync();
-            var childContent = childContentAwaiter.GetContent();
-
+            var template = @"<div class=""{1}"">{0}</div>";
             var cssClass = !string.IsNullOrEmpty(CssClass) ? string.Format("well {0}", CssClass) : "well";
-
+            var content = await GetContentAsync(context, output, template, cssClass);
             output.TagName = "";
-            output.Content.AppendHtml(string.Format(template, cssClass, childContent));
+            output.Content.AppendHtml(content);
         }
-    }    
+    }
 }
