@@ -5,7 +5,7 @@ using TagSharp.Abstract;
 
 namespace TagSharp.Bootstrap.Tabs
 {
-    [HtmlTargetElement("ts-bootstrap-tab-contents")]
+    [HtmlTargetElement("ts-tab-contents")]
     public class TagContentHolderTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

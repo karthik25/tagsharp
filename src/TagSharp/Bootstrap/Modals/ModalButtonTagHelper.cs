@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Modals
 {
-    [HtmlTargetElement("ts-bootstap-launcher")]
+    [HtmlTargetElement("ts-modal-launcher")]
     public class ModalButtonTagHelper : TagHelper
     {
         private const string IdentifierAttributeName = "bs-modal-id";

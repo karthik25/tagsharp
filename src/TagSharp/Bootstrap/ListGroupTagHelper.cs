@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap
 {
-    [HtmlTargetElement("ts-bootstrap-list-group")]
+    [HtmlTargetElement("ts-list-group")]
     public class ListGroupTagHelper : TagHelper
     {
         private const string ListSourceAttributeName = "bs-list-items";
@@ -40,7 +40,7 @@ namespace TagSharp.Bootstrap
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-list-group-item")]
+    [HtmlTargetElement("ts-list-group-item")]
     public class ListGroupItemTagHelper : TagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

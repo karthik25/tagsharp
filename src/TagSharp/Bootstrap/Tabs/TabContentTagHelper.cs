@@ -5,7 +5,7 @@ using TagSharp.Abstract;
 
 namespace TagSharp.Bootstrap.Tabs
 {
-    [HtmlTargetElement("ts-bootstrap-tab-content")]
+    [HtmlTargetElement("ts-tab-content")]
     public class TabContentTagHelper : TagHelper
     {
         private const string LinkAttributeName = "bs-item-link";

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Dropdowns
 {
-    [HtmlTargetElement("ts-bootstrap-btn-dropdown")]
+    [HtmlTargetElement("ts-btn-dropdown")]
     public class DropdownButtonTagHelper : DropdownTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

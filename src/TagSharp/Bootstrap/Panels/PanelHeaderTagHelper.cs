@@ -4,7 +4,7 @@ using TagSharp.Abstract;
 
 namespace TagSharp.Bootstrap.Panels
 {
-    [HtmlTargetElement("ts-bootstrap-panel-header")]
+    [HtmlTargetElement("ts-panel-header")]
     public class PanelHeaderTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

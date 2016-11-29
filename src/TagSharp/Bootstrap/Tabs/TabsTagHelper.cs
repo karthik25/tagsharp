@@ -4,7 +4,7 @@ using TagSharp.Context;
 
 namespace TagSharp.Bootstrap.Tabs
 {
-    [HtmlTargetElement("ts-bootstrap-tabs")]
+    [HtmlTargetElement("ts-tabs")]
     public class TabsTagHelper : TagHelper
     {
         private const string IdAttributeName = "bs-tabs-id";

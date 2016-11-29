@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Labels
 {
-    [HtmlTargetElement("ts-bootstrap-label-success")]
+    [HtmlTargetElement("ts-label-success")]
     public class LabelSuccessTagHelper : LabelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -13,7 +13,7 @@ namespace TagSharp.Bootstrap.Labels
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-label-primary")]
+    [HtmlTargetElement("ts-label-primary")]
     public class LabelPrimaryTagHelper : LabelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -23,7 +23,7 @@ namespace TagSharp.Bootstrap.Labels
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-label-info")]
+    [HtmlTargetElement("ts-label-info")]
     public class LabelInfoTagHelper : LabelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -33,7 +33,7 @@ namespace TagSharp.Bootstrap.Labels
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-label-warning")]
+    [HtmlTargetElement("ts-label-warning")]
     public class LabelWarningTagHelper : LabelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -43,7 +43,7 @@ namespace TagSharp.Bootstrap.Labels
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-label-danger")]
+    [HtmlTargetElement("ts-label-danger")]
     public class LabelDangerTagHelper : LabelTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

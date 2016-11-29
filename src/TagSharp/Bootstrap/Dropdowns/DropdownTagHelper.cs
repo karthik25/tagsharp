@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace TagSharp.Bootstrap.Dropdowns
 {
-    [HtmlTargetElement("ts-bootstrap-dropdown")]
+    [HtmlTargetElement("ts-dropdown")]
     public class DropdownTagHelper : TagHelper
     {
         private const string TypeAttributeName = "bs-type";
@@ -51,7 +51,7 @@ namespace TagSharp.Bootstrap.Dropdowns
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-button")]
+    [HtmlTargetElement("ts-button")]
     public class DropdownLauncherTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -73,7 +73,7 @@ namespace TagSharp.Bootstrap.Dropdowns
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-dropdown-list")]
+    [HtmlTargetElement("ts-dropdown-list")]
     public class DropdownListTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -87,7 +87,7 @@ namespace TagSharp.Bootstrap.Dropdowns
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-dropdown-item", ParentTag = "ts-bootstrap-dropdown-list")]
+    [HtmlTargetElement("ts-dropdown-item", ParentTag = "ts-dropdown-list")]
     public class DropdownItemTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -102,7 +102,7 @@ namespace TagSharp.Bootstrap.Dropdowns
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-dropdown-seperator", ParentTag = "ts-bootstrap-dropdown-list")]
+    [HtmlTargetElement("ts-dropdown-seperator", ParentTag = "ts-dropdown-list")]
     public class DropdownItemSeperatorTagHelper : TagHelper
     {
         public override void Process(TagHelperContext context, TagHelperOutput output)

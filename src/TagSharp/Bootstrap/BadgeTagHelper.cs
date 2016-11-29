@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace TagSharp.Bootstrap
 {
-    [HtmlTargetElement("ts-bootstrap-badge")]
+    [HtmlTargetElement("ts-badge")]
     public class BadgeTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

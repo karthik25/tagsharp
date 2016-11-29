@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Labels
 {
-    [HtmlTargetElement("ts-bootstrap-label")]
+    [HtmlTargetElement("ts-label")]
     public class LabelTagHelper : TagHelper
     {
         private const string CssClassAttributeName = "bs-css-class";

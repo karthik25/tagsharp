@@ -4,7 +4,7 @@ using TagSharp.Abstract;
 
 namespace TagSharp.Bootstrap.Modals
 {
-    [HtmlTargetElement("ts-bootstrap-modal-header")]
+    [HtmlTargetElement("ts-modal-header")]
     public class ModalHeaderTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

@@ -5,7 +5,7 @@ using TagSharp.Extensions;
 
 namespace TagSharp.Bootstrap.Modals
 {
-    [HtmlTargetElement("ts-bootstrap-modal")]
+    [HtmlTargetElement("ts-modal")]
     public class ModalTagHelper : TagHelper
     {
         private const string IdentifierAttributeName = "bs-modal-id";

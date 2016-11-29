@@ -4,7 +4,7 @@ using TagSharp.Abstract;
 
 namespace TagSharp.Bootstrap.Modals
 {
-    [HtmlTargetElement("ts-bootstrap-modal-footer")]
+    [HtmlTargetElement("ts-modal-footer")]
     public class ModalFooterTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

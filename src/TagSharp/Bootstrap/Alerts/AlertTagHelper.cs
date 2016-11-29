@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Alerts
 {
-    [HtmlTargetElement("ts-bootstrap-alert")]
+    [HtmlTargetElement("ts-alert")]
     public class AlertTagHelper : TagHelper
     {
         private const string CssClassAttributeName = "bs-css-class";

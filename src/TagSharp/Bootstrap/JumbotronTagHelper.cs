@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace TagSharp.Bootstrap
 {
-    [HtmlTargetElement("ts-bootstrap-jumbotron")]
+    [HtmlTargetElement("ts-jumbotron")]
     public class JumbotronTagHelper : TagHelper
     {
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

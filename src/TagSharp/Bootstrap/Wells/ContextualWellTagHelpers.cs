@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Wells
 {
-    [HtmlTargetElement("ts-bootstrap-well-sm")]
+    [HtmlTargetElement("ts-well-sm")]
     public class WellSmallTagHelper : WellTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -13,7 +13,7 @@ namespace TagSharp.Bootstrap.Wells
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-well-lg")]
+    [HtmlTargetElement("ts-well-lg")]
     public class WellLargeTagHelper : WellTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

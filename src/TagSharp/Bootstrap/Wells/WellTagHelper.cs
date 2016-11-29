@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Wells
 {
-    [HtmlTargetElement("ts-bootstrap-well")]
+    [HtmlTargetElement("ts-well")]
     public class WellTagHelper : TagHelper
     {
         private const string CssClassAttributeName = "bs-css-class";

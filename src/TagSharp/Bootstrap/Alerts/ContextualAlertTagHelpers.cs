@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace TagSharp.Bootstrap.Alerts
 {
-    [HtmlTargetElement("ts-bootstrap-alert-success")]
+    [HtmlTargetElement("ts-alert-success")]
     public class AlertSuccessTagHelper : AlertTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -13,7 +13,7 @@ namespace TagSharp.Bootstrap.Alerts
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-alert-info")]
+    [HtmlTargetElement("ts-alert-info")]
     public class AlertInfoTagHelper : AlertTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -23,7 +23,7 @@ namespace TagSharp.Bootstrap.Alerts
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-alert-warning")]
+    [HtmlTargetElement("ts-alert-warning")]
     public class AlertWarningTagHelper : AlertTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -33,7 +33,7 @@ namespace TagSharp.Bootstrap.Alerts
         }
     }
 
-    [HtmlTargetElement("ts-bootstrap-alert-danger")]
+    [HtmlTargetElement("ts-alert-danger")]
     public class AlertDangerTagHelper : AlertTagHelper
     {
         public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)

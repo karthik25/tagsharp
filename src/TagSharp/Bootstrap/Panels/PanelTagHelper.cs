@@ -5,8 +5,8 @@ using TagSharp.Extensions;
 
 namespace TagSharp.Bootstrap.Panels
 {
-    [RestrictChildren("ts-bootstrap-panel-header", "ts-bootstrap-panel-body", "ts-bootstrap-panel-footer")]
-    [HtmlTargetElement("ts-bootstrap-panel")]
+    [RestrictChildren("ts-panel-header", "ts-panel-body", "ts-panel-footer")]
+    [HtmlTargetElement("ts-panel")]
     public class PanelTagHelper : TagHelper
     {
         private const string CssClassAttributeName = "bs-css-class";
