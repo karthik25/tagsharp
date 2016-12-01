@@ -191,7 +191,25 @@
         <ts-tab-content bs-item-link="tabs-m-demo">
             <br />
             <br />
-            
+            <ts-modal-launcher bs-modal-id="sampleModal" bs-css-class="btn btn-primary">
+                Open Sample Modal
+            </ts-modal-launcher>
+
+            <ts-modal bs-modal-id="sampleModal">
+                <ts-modal-header>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </ts-modal-header>
+                <ts-modal-body>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make a type specimen book.
+                </ts-modal-body>
+                <ts-modal-footer>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save changes</button>
+                </ts-modal-footer>
+            </ts-modal>
         </ts-tab-content>
     </ts-tab-contents>
 </ts-tabs>
