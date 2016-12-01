@@ -1,0 +1,34 @@
+﻿<h3><strong>{{ * }}</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-{{ * }}-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-{{ * }}-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-{{ * }}-src">
+            <br />
+            <br />
+
+            <strong>Sample</strong><br /><br />
+<pre>
+{{ * }}
+</pre>
+            <br />
+            <strong>Also Available</strong><br /><br />
+<pre>
+{{ * }}
+</pre>
+
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-{{ * }}-demo">
+            <br />
+            <br />
+            {{ * }}
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<hr />
