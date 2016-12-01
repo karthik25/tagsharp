@@ -15,8 +15,7 @@ namespace TagSharp.Bootstrap.Modals
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var contentModel = new BasicContext();
-            context.Items.Add(typeof(ModalTagHelper), contentModel);
+            var contentModel = context.SetItem<ModalTagHelper, BasicContext>();
 
             await output.GetChildContentAsync();
 

@@ -20,9 +20,7 @@ namespace TagSharp.Bootstrap.Panels
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var modalContext = new BasicContext();
-            context.Items.Add(typeof(PanelTagHelper), modalContext);
-
+            var modalContext = context.SetItem<PanelTagHelper, BasicContext>();
             await output.GetChildContentAsync();
 
             var template = @"<div class=""panel {3}"" {4}>

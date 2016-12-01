@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using TagSharp.Context;
+using TagSharp.Extensions;
 
 namespace TagSharp.Bootstrap.Tabs
 {
@@ -14,9 +15,7 @@ namespace TagSharp.Bootstrap.Tabs
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var contentModel = new MultipleItemsContext();
-            context.Items.Add(typeof(TabsTagHelper), contentModel);
-
+            var contentModel = context.SetItem<TabsTagHelper, MultipleItemsContext>();
             await output.GetChildContentAsync();
 
             var template = @"<ul class=""nav nav-tabs"" data-tabs=""tabs"" {2}>
