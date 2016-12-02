@@ -1,324 +1,644 @@
 ﻿@{
-    ViewData["Title"] = "Tag# :: Home";
+    ViewData["Title"] = "Tag# :: Show & Tell";
 }
 
 <br />
+<h3><strong>What is Tag#?</strong></h3>
+<strong>Tag#</strong> is a set of useful tag helpers for .net core. At this point, only a subset of bootstrap tag helpers 
+are present. In the future I intend to add a lot more! - both on the bootstrap side and others!!
+<br />
+<br />
+<h3 id="top"><strong>Sections</strong></h3>
 
-@{ 
-    var list = new List<string>
-    {
-        "Item one",
-        "Item two",
-        "Item three"
-    };
-}
+<a href="#t-alerts" class="section">Alerts</a> | <a href="#t-badges" class="section">Badges</a> |
+<a href="#t-btn-dd" class="section">Button Dropdowns</a> | <a href="#t-dd" class="section">Dropdowns</a> |
+<a href="#t-jtron" class="section">Jumbotron</a> | <a href="#t-lbl" class="section">Labels</a> |
+<a href="#t-modals" class="section">Modals</a> | <a href="#t-panels" class="section">Panels</a> |
+<a href="#t-tabs" class="section">Tabs</a> | <a href="#t-wells" class="section">Wells</a>
 
-<div class="row">
-    <ts-modal-launcher bs-modal-id="sampleModal" bs-css-class="btn btn-primary">
-        Open Sample Modal
-    </ts-modal-launcher>
+<hr />
 
-    <br />
-    <br />
+<h3 id="t-alerts"><strong>Alerts</strong></h3>
+<br />
 
-    <ts-modal bs-modal-id="sampleModal">
-        <ts-modal-header>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-        </ts-modal-header>
-        <ts-modal-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
-            make a type specimen book.
-        </ts-modal-body>
-        <ts-modal-footer>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-success">Save changes</button>
-        </ts-modal-footer>
-    </ts-modal>
+When you use <code>ts-alert</code> without any attributes, it renders a "success" alert (so does <code>ts-alert-success</code>). To use other contextual alerts, you
+can either pass in the <code>bs-css-class</code> as shown below or use the shortcuts like <code>ts-alert-info</code>.
+<br />
+<br />
 
-    <ts-tabs>
-        <ts-tab-items>
-            <ts-tab-item bs-item-link="first" bs-item-text="First"></ts-tab-item>
-            <ts-tab-item bs-item-link="second" bs-item-text="Second"></ts-tab-item>
-        </ts-tab-items>
-        <ts-tab-contents>
-            <ts-tab-content bs-item-link="first">
-                <h1>First Tab</h1>
-                <br />
-                <p>Some content</p>
-            </ts-tab-content>
-            <ts-tab-content bs-item-link="second">
-                <h1>Second Tab</h1>
-                <br />
-                <p>Some other content</p>
-            </ts-tab-content>
-        </ts-tab-contents>
-    </ts-tabs>
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-a-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-a-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-a-src">
+            <br />
+            <br />
 
-    <br />
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-alert&gt;</span>
+    &lt;div&gt;
+        Hello! This is the default alert!!
+    &lt;/div&gt;
+<span class="ts-tag">&lt;/ts-alert&gt;</span>
 
-    <ts-btn-primary-dropdown>
-        <ts-button>
-            Js Frameworks
-        </ts-button>
-        <ts-dropdown-list>
-            <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
-            <ts-dropdown-seperator></ts-dropdown-seperator>
-            <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
-        </ts-dropdown-list>
-    </ts-btn-primary-dropdown>
-
-    <ts-btn-warning-dropdown>
-        <ts-button>
-            Js Frameworks
-        </ts-button>
-        <ts-dropdown-list>
-            <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
-            <ts-dropdown-seperator></ts-dropdown-seperator>
-            <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
-        </ts-dropdown-list>
-    </ts-btn-warning-dropdown>
-
-    <ts-btn-dropdown>
-        <ts-button>
-            Js Frameworks
-        </ts-button>
-        <ts-dropdown-list>
-            <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
-            <ts-dropdown-seperator></ts-dropdown-seperator>
-            <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
-        </ts-dropdown-list>
-    </ts-btn-dropdown>
-
-    <br />
-    <br />
-
-    <ts-dropdown>
-        <ts-button>
-            Js Frameworks
-        </ts-button>
-        <ts-dropdown-list>
-            <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
-            <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
-            <ts-dropdown-seperator></ts-dropdown-seperator>
-            <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
-        </ts-dropdown-list>
-    </ts-dropdown>
+<span class="ts-tag">&lt;ts-alert-success&gt;</span>
+    &lt;div&gt;
+        Hello! This is the success alert!!
+    &lt;/div&gt;
+<span class="ts-tag">&lt;/ts-alert-success&gt;</span>
     
-    <br />
-    
-    <div>
-        <ts-label>Default</ts-label>
-        <ts-label-primary>Primary</ts-label-primary>
-        <ts-label-success>Success</ts-label-success>
-        <ts-label-info>Info</ts-label-info>
-        <ts-label-warning>Warning</ts-label-warning>
-        <ts-label bs-css-class="label-danger">Danger</ts-label>
-    </div>
+<span class="ts-tag">&lt;ts-alert bs-css-class="alert-info"&gt;</span>
+    &lt;div&gt;
+        Hello! This is the info alert!!
+    &lt;/div&gt;
+<span class="ts-tag">&lt;/ts-alert-success&gt;</span>
+</pre>
+            <br />
+            <strong>Also Available</strong><br /><br />
+<pre>
+&lt;!-- Contextual helpers --&gt;
+<span class="ts-tag">&lt;ts-alert-info&gt;</span>...<span class="ts-tag">&lt;/ts-alert-info&gt;</span>
+<span class="ts-tag">&lt;ts-alert-warning&gt;</span>...<span class="ts-tag">&lt;/ts-alert-warning&gt;</span>
+<span class="ts-tag">&lt;ts-alert-danger&gt;</span>...<span class="ts-tag">&lt;/ts-alert-danger&gt;</span>
+<span class="ts-tag">&lt;ts-alert-primary&gt;</span>...<span class="ts-tag">&lt;/ts-alert-primary&gt;</span>
+</pre>
 
-    <br />
-    <br />
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-a-demo">
+            <br />
+            <br />
+            <ts-alert>
+                <div>
+                    Hello! This is the default alert!!
+                </div>
+            </ts-alert>
 
-    <ts-jumbotron>
-        <h1>Hello, world!</h1>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-    </ts-jumbotron>
-    
-    <div>
-        <ts-badge>Tag# Demo</ts-badge>
-    </div>
-    
-    <br />
-    <br />
+            <ts-alert bs-css-class="alert-info">
+                <div>
+                    Hello! This is the info alert!!
+                </div>
+            </ts-alert>
 
-    <ts-well>
+            <ts-alert-warning>
+                <div>
+                    Hello! This is the warning alert!!
+                </div>
+            </ts-alert-warning>
+
+            <ts-alert-danger>
+                <div>
+                    Hello! This is the danger alert!!
+                </div>
+            </ts-alert-danger>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-badges"><strong>Badges</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-b-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-b-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-b-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-badge&gt;Tag# Demo&lt;/ts-badge&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-b-demo">
+            <br />
+            <br />
+            <ts-badge>Tag# Demo</ts-badge>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-btn-dd"><strong>Button Dropdowns</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-bdd-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-bdd-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-bdd-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-btn-dropdown&gt;</span>
+    <span class="ts-tag">&lt;ts-button&gt;</span>
+        Js Frameworks
+    <span class="ts-tag">&lt;/ts-button&gt;</span>
+    <span class="ts-tag">&lt;ts-dropdown-list&gt;</span>
+        <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;jQuery&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+        <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Mustache&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+        <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Moment&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+        <span class="ts-tag">&lt;ts-dropdown-seperator&gt;</span><span class="ts-tag">&lt;/ts-dropdown-seperator&gt;</span>
+        <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Angular&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+    <span class="ts-tag">&lt;/ts-dropdown-list&gt;</span>
+<span class="ts-tag">&lt;/ts-btn-dropdown&gt;</span>
+<span class="ts-tag">&lt;ts-btn-success-dropdown&gt;</span>
+    <span class="ts-tag">&lt;ts-button&gt;</span>
+        Js Frameworks
+    <span class="ts-tag">&lt;/ts-button&gt;</span>
+    <span class="ts-tag">&lt;ts-dropdown-list&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;jQuery&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Mustache&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Moment&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-seperator&gt;</span><span class="ts-tag">&lt;/ts-dropdown-seperator&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Angular&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+    <span class="ts-tag">&lt;/ts-dropdown-list&gt;</span>
+<span class="ts-tag">&lt;/ts-btn-success-dropdown&gt;</span>
+</pre>
+            <br />
+            <strong>Also Available</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-btn-warning-dropdown&gt;</span>...<span class="ts-tag">ts-btn-warning-dropdown</span>
+<span class="ts-tag">&lt;ts-btn-danger-dropdown&gt;</span>...<span class="ts-tag">ts-btn-danger-dropdown</span>
+<span class="ts-tag">&lt;ts-btn-info-dropdown&gt;</span>...<span class="ts-tag">ts-btn-info-dropdown</span>
+<span class="ts-tag">&lt;ts-btn-primary-dropdown&gt;</span>...<span class="ts-tag">ts-btn-primary-dropdown</span>
+</pre>
+
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-bdd-demo">
+            <br />
+            <br />
+            <ts-btn-dropdown>
+                <ts-button>
+                    Js Frameworks
+                </ts-button>
+                <ts-dropdown-list>
+                    <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
+                    <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
+                    <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
+                    <ts-dropdown-seperator></ts-dropdown-seperator>
+                    <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
+                </ts-dropdown-list>
+            </ts-btn-dropdown>
+
+            <ts-btn-success-dropdown>
+                <ts-button>
+                    Js Frameworks
+                </ts-button>
+                <ts-dropdown-list>
+                    <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
+                    <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
+                    <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
+                    <ts-dropdown-seperator></ts-dropdown-seperator>
+                    <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
+                </ts-dropdown-list>
+            </ts-btn-success-dropdown>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-dd"><strong>Dropdowns</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-dd-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-dd-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-dd-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-dropdown&gt;</span>
+    <span class="ts-tag">&lt;ts-button&gt;</span>
+        Js Frameworks
+    <span class="ts-tag">&lt;/ts-button&gt;</span>
+    <span class="ts-tag">&lt;ts-dropdown-list&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;jQuery&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Mustache&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Moment&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-seperator&gt;</span><span class="ts-tag">&lt;/ts-dropdown-seperator&gt;</span>
+       <span class="ts-tag">&lt;ts-dropdown-item&gt;</span>&lt;a href="#"&gt;Angular&lt;/a&gt;<span class="ts-tag">&lt;/ts-dropdown-item&gt;</span>
+    <span class="ts-tag">&lt;/ts-dropdown-list&gt;</span>
+<span class="ts-tag">&lt;/ts-dropdown&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-dd-demo">
+            <br />
+            <br />
+            <ts-dropdown>
+                <ts-button>
+                    Js Frameworks
+                </ts-button>
+                <ts-dropdown-list>
+                    <ts-dropdown-item><a href="#">jQuery</a></ts-dropdown-item>
+                    <ts-dropdown-item><a href="#">Mustache</a></ts-dropdown-item>
+                    <ts-dropdown-item><a href="#">Moment</a></ts-dropdown-item>
+                    <ts-dropdown-seperator></ts-dropdown-seperator>
+                    <ts-dropdown-item><a href="#">Angular</a></ts-dropdown-item>
+                </ts-dropdown-list>
+            </ts-dropdown>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-jtron"><strong>Jumbotron</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-j-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-j-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-j-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-jumbotron&gt;</span>
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+    a type specimen book.&lt;/p&gt;
+    &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="#" role="button"&gt;Learn more&lt;/a&gt;&lt;/p&gt;
+<span class="ts-tag">&lt;/ts-jumbotron&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-j-demo">
+            <br />
+            <br />
+            <ts-jumbotron>
+                <h1>Hello, world!</h1>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book.
+                </p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+            </ts-jumbotron>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-lbls"><strong>Labels</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-lbl-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-lbl-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-lbl-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-label&gt;</span>Default<span class="ts-tag">&lt;/ts-label&gt;</span>
+<span class="ts-tag">&lt;ts-label-primary&gt;</span>Primary<span class="ts-tag">&lt;/ts-label-primary&gt;</span>
+<span class="ts-tag">&lt;ts-label-success&gt;</span>Success<span class="ts-tag">&lt;/ts-label-success&gt;</span>
+<span class="ts-tag">&lt;ts-label-info&gt;</span>Info<span class="ts-tag">&lt;/ts-label-info&gt;</span>
+<span class="ts-tag">&lt;ts-label-warning&gt;</span>Warning<span class="ts-tag">&lt;/ts-label-warning&gt;</span>
+<span class="ts-tag">&lt;ts-label bs-css-class="label-danger"&gt;</span>Danger<span class="ts-tag">&lt;/ts-label&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-lbl-demo">
+            <br />
+            <br />
+            <ts-label>Default</ts-label>
+            <ts-label-primary>Primary</ts-label-primary>
+            <ts-label-success>Success</ts-label-success>
+            <ts-label-info>Info</ts-label-info>
+            <ts-label-warning>Warning</ts-label-warning>
+            <ts-label bs-css-class="label-danger">Danger</ts-label>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-modals"><strong>Modals</strong></h3>
+<br />
+
+In order to use a modal, you need a launcher, like a button and also the html for the modal. You can use <code>ts-modal-launcher</code>
+to declare a button that would show your modal. The <code>bs-modal-id</code> indicates the id of the html of the modal. To declare
+the modal's html itself, use <code>ts-modal</code>. Note that you <strong>don't</strong> have to prefix ids with <strong>#</strong>. 
+Tag# does that for you! Also, none of the sections (<code>ts-modal-*</code>) are required and its upto you.
+<br />
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-m-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-m-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-m-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+&lt;!-- Launcher --&gt;
+<span class="ts-tag">&lt;ts-modal-launcher bs-modal-id="sampleModal" bs-css-class="btn btn-primary"&gt;</span>
+    Open Sample Modal
+<span class="ts-tag">&lt;/ts-modal-launcher&gt;</span>
+
+&lt;!-- Modal --&gt;
+<span class="ts-tag">&lt;ts-modal bs-modal-id="sampleModal"&gt;</span>
+    <span class="ts-tag">&lt;ts-modal-header&gt;</span>
+        &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;/button&gt;
+        &lt;h4 class="modal-title" id="myModalLabel"&gt;Modal title&lt;/h4&gt;
+    <span class="ts-tag">&lt;/ts-modal-header&gt;</span>
+    <span class="ts-tag">&lt;ts-modal-body&gt;</span>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+        make a type specimen book.
+    <span class="ts-tag">&lt;/ts-modal-body&gt;</span>
+    <span class="ts-tag">&lt;ts-modal-footer&gt;</span>
+        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-success"&gt;Save changes&lt;/button&gt;
+    <span class="ts-tag">&lt;/ts-modal-footer&gt;</span>
+<span class="ts-tag">&lt;/ts-modal&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-m-demo">
+            <br />
+            <br />
+            <ts-modal-launcher bs-modal-id="sampleModal" bs-css-class="btn btn-primary">
+                Open Sample Modal
+            </ts-modal-launcher>
+
+            <ts-modal bs-modal-id="sampleModal">
+                <ts-modal-header>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </ts-modal-header>
+                <ts-modal-body>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+                    make a type specimen book.
+                </ts-modal-body>
+                <ts-modal-footer>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save changes</button>
+                </ts-modal-footer>
+            </ts-modal>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-panels"><strong>Panels</strong></h3>
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-panel&gt;</span>
+    <span class="ts-tag">&lt;ts-panel-header&gt;</span>
+        &lt;strong&gt;Default Panel&lt;/strong&gt;
+    <span class="ts-tag">&lt;/ts-panel-header&gt;</span>
+    <span class="ts-tag">&lt;ts-panel-body&gt;</span>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
         a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
         remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
         Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
         versions of Lorem Ipsum.
-    </ts-well>
+    <span class="ts-tag">&lt;/ts-panel-body&gt;</span>
+<span class="ts-tag">&lt;/ts-panel&gt;</span>
+</pre>
+            <br />
+            <strong>Also Available</strong><br /><br />
+<pre>
+&lt;!-- Within &lt;ts-panel /&gt; --&gt;
+<span class="ts-tag">&lt;ts-panel-footer&gt;</span>...<span class="ts-tag">&lt;/ts-panel-footer&gt;</span>
 
-    <ts-well-sm>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-    </ts-well-sm>
+&lt;!-- Contextual helpers --&gt;
+<span class="ts-tag">&lt;ts-panel-info&gt;</span>...<span class="ts-tag">&lt;/ts-panel-info&gt;</span>
+<span class="ts-tag">&lt;ts-panel-warning&gt;</span>...<span class="ts-tag">&lt;/ts-panel-warning&gt;</span>
+<span class="ts-tag">&lt;ts-panel-danger&gt;</span>...<span class="ts-tag">&lt;/ts-panel-danger&gt;</span>
+<span class="ts-tag">&lt;ts-panel-success&gt;</span>...<span class="ts-tag">&lt;/ts-panel-success&gt;</span>
+<span class="ts-tag">&lt;ts-panel-primary&gt;</span>...<span class="ts-tag">&lt;/ts-panel-primary&gt;</span>
+</pre>
 
-    <ts-well-lg>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-    </ts-well-lg>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-demo">
+            <br />
+            <br />
+            <ts-panel>
+                <ts-panel-header>
+                    <strong>Default Panel</strong>
+                </ts-panel-header>
+                <ts-panel-body>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </ts-panel-body>
+            </ts-panel>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
 
-    <ts-list-group bs-list-items="list">
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
 
-    </ts-list-group>
+<h3 id="t-tabs"><strong>Tabs</strong></h3>
+<br />
 
-    <ts-alert>
-        <div>
-            Hello! This is the default alert!!
-        </div>
-    </ts-alert>
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-ta-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-ta-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-ta-src">
+            <br />
+            <br />
 
-    <ts-alert-info>
-        <div>
-            Hello! This is the info alert!!
-        </div>
-    </ts-alert-info>
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-tabs&gt;</span>
+    <span class="ts-tag">&lt;ts-tab-items&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-first" bs-item-text="First"&gt;</span><span class="ts-tag">&lt;/ts-tab-item&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-second" bs-item-text="Second"&gt;</span><span class="ts-tag">&gt;/ts-tab-item&gt;</span>
+    <span class="ts-tag">&lt;/ts-tab-items&gt;</span>
+    <span class="ts-tag">&lt;ts-tab-contents&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-content bs-item-link="d-first"&gt;</span>
+            &lt;h1&gt;First Tab&lt;/h1&gt;
+            &lt;br /&gt;
+            &lt;p&gt;Some content&lt;/p&gt;
+        <span class="ts-tag">&lt;/ts-tab-content&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-content bs-item-link="d-second"&gt;</span>
+            &lt;h1&gt;Second Tab&lt;/h1&gt;
+            &lt;br /&gt;
+            &lt;p&gt;Some other content&lt;/p&gt;
+        <span class="ts-tag">&lt;/ts-tab-content&gt;</span>
+    <span class="ts-tag">&lt;/ts-tab-contents&gt;</span>
+<span class="ts-tag">&lt;/ts-tabs&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-ta-demo">
+            <br />
+            <br />
+            You are seeing it already :)
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
 
-    <ts-alert-warning>
-        <div>
-            Hello! This is the warning alert!!
-        </div>
-    </ts-alert-warning>
-    
-    <ts-alert-danger>
-        <div>
-            Hello! This is the danger alert!!
-        </div>
-    </ts-alert-danger>
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
 
-    <ts-panel>
-        <ts-panel-header>
-            <strong>Default Panel</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make 
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including 
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-        <ts-panel-footer>
-            Thank You!
-        </ts-panel-footer>
-    </ts-panel>
+<h3 id="t-wells"><strong>Wells</strong></h3>
+<br />
 
-    <br />
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-w-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-w-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-w-src">
+            <br />
+            <br />
 
-    <ts-panel bs-css-class="panel-primary">
-        <ts-panel-header>
-            <strong>Default Panel Using Classes Without Footer</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-    </ts-panel>
+            <strong>Usage</strong><br /><br />
+<pre>
+<span class="ts-tag">&lt;ts-well&gt;</span>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+    remaining essentially unchanged.
+<span class="ts-tag">&lt;/ts-well&gt;</span>
 
-    <br />
+<span class="ts-tag">&lt;ts-well-sm&gt;</span>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+    a type specimen book.
+<span class="ts-tag">&lt;/ts-well-sm&gt;</span>
 
-    <ts-panel-success>
-        <ts-panel-header>
-            <strong>Success Panel</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-        <ts-panel-footer>
-            Thank You Again!!
-        </ts-panel-footer>
-    </ts-panel-success>
+<span class="ts-tag">&lt;ts-well-lg&gt;</span>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+    versions of Lorem Ipsum.
+<span class="ts-tag">&lt;/ts-well-lg&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-w-demo">
+            <br />
+            <br />
+            <ts-well>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged.
+            </ts-well>
 
-    <br />
+            <ts-well-sm>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book.
+            </ts-well-sm>
 
-    <ts-panel-warning>
-        <ts-panel-header>
-            <strong>Warning Panel</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-        <ts-panel-footer>
-            Thank You Again!!
-        </ts-panel-footer>
-    </ts-panel-warning>
+            <ts-well-lg>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                versions of Lorem Ipsum.
+            </ts-well-lg>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
 
-    <br />
-
-    <ts-panel-danger>
-        <ts-panel-header>
-            <strong>Danger Panel</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-        <ts-panel-footer>
-            Thank You Again!!
-        </ts-panel-footer>
-    </ts-panel-danger>
-
-    <br />
-
-    <ts-panel-primary>
-        <ts-panel-header>
-            <strong>Primary Panel</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-        <ts-panel-footer>
-            Thank You Again!!
-        </ts-panel-footer>
-    </ts-panel-primary>
-
-    <br />
-
-    <ts-panel-info>
-        <ts-panel-header>
-            <strong>Info Panel Without Footer</strong>
-        </ts-panel-header>
-        <ts-panel-body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-            Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-        </ts-panel-body>
-    </ts-panel-info>
-</div>
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
