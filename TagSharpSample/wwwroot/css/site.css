@@ -36,3 +36,20 @@ textarea {
     display: none
   }
 }
+
+/* Custom */
+.ts-tag {
+    color: darkblue;
+}
+
+.section {
+    padding: 5px
+}
+
+.section:hover {
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: blue
+}
