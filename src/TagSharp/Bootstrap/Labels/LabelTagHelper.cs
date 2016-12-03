@@ -13,14 +13,14 @@ namespace TagSharp.Bootstrap.Labels
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var template = @"<span class=""{0}"">{1}</span>";
             var childContentAwaiter = await output.GetChildContentAsync();
             var childContent = childContentAwaiter.GetContent();
 
             var cssClass = !string.IsNullOrEmpty(CssClass) ? string.Format("label {0}", CssClass) : "label label-default";
 
-            output.TagName = "";
-            output.Content.AppendHtml(string.Format(template, cssClass, childContent));
+            output.TagName = "span";
+            output.Attributes.Add("class", cssClass);
+            output.Content.SetHtmlContent(childContent);
         }
     }
 }
