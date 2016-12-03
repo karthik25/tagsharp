@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TagSharp.Context;
+using TagSharp.Extensions;
 
-namespace TagSharp.Bootstrap
+namespace TagSharp.Bootstrap.ListGroup
 {
     [HtmlTargetElement("ts-list-group")]
     public class ListGroupTagHelper : TagHelper
@@ -31,21 +33,16 @@ namespace TagSharp.Bootstrap
             }
             else
             {
-                var listContentAwaiter = await output.GetChildContentAsync();
-                listContent = listContentAwaiter.GetContent();
+                var contentModel = context.GetItem<ListGroupTagHelper, MultipleItemsContext>();
+                contentModel.Items = new List<string>();
+
+                await output.GetChildContentAsync();
+
+                listContent = string.Join("", contentModel.Items);
             }
 
             output.TagName = "";
             output.Content.AppendHtml(listContent);
-        }
-    }
-
-    [HtmlTargetElement("ts-list-group-item")]
-    public class ListGroupItemTagHelper : TagHelper
-    {
-        public override Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            return base.ProcessAsync(context, output);
         }
     }
 }
