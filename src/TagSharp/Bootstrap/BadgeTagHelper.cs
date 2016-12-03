@@ -10,10 +10,9 @@ namespace TagSharp.Bootstrap
         {
             var awaiter = await output.GetChildContentAsync();
             var content = awaiter.GetContent();
-            var html = string.Format(@"<span class=""badge"">{0}</span>", content);
-
-            output.TagName = "";
-            output.Content.AppendHtml(html);
+            output.TagName = "span";
+            output.Attributes.Add("class", "badge");
+            output.Content.SetHtmlContent(content);
         }
     }
 }

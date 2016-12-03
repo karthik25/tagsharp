@@ -9,12 +9,10 @@ namespace TagSharp.Bootstrap
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             var awaiter = await output.GetChildContentAsync();
-            var content = awaiter.GetContent();
-
-            var template = @"<div class=""jumbotron"">{0}</div>";
-
-            output.TagName = "";
-            output.Content.AppendHtml(string.Format(template, content));
+            var content = awaiter.GetContent();            
+            output.TagName = "div";
+            output.Attributes.Add("class", "jumbotron");
+            output.Content.SetHtmlContent(content);
         }
     }
 }
