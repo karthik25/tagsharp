@@ -33,7 +33,7 @@ namespace TagSharp.Bootstrap.ListGroup
             }
             else
             {
-                var contentModel = context.GetItem<ListGroupTagHelper, MultipleItemsContext>();
+                var contentModel = context.SetItem<ListGroupTagHelper, MultipleItemsContext>();
                 contentModel.Items = new List<string>();
 
                 await output.GetChildContentAsync();

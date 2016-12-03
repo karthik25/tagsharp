@@ -13,8 +13,9 @@ are present. In the future I intend to add a lot more! - both on the bootstrap s
 <a href="#t-alerts" class="section">Alerts</a> | <a href="#t-badges" class="section">Badges</a> |
 <a href="#t-btn-dd" class="section">Button Dropdowns</a> | <a href="#t-dd" class="section">Dropdowns</a> |
 <a href="#t-jtron" class="section">Jumbotron</a> | <a href="#t-lbl" class="section">Labels</a> |
-<a href="#t-modals" class="section">Modals</a> | <a href="#t-panels" class="section">Panels</a> |
-<a href="#t-tabs" class="section">Tabs</a> | <a href="#t-wells" class="section">Wells</a>
+<a href="#t-lgps" class="section">List Groups</a> | <a href="#t-modals" class="section">Modals</a> | 
+<a href="#t-panels" class="section">Panels</a> | <a href="#t-tabs" class="section">Tabs</a> | 
+<a href="#t-wells" class="section">Wells</a>
 
 <hr />
 
@@ -360,6 +361,74 @@ can either pass in the <code>bs-css-class</code> as shown below or use the short
             <ts-label-info>Info</ts-label-info>
             <ts-label-warning>Warning</ts-label-warning>
             <ts-label bs-css-class="label-danger">Danger</ts-label>
+        </ts-tab-content>
+    </ts-tab-contents>
+</ts-tabs>
+
+<br />
+<p class="pull-right">
+    <a href="#top"><i class="fa fa-arrow-up"></i></a>
+</p>
+<br />
+<hr />
+
+<h3 id="t-lgps"><strong>List Groups</strong></h3>
+<br />
+
+There are 2 ways by which you could declare a list group. By passing in a <code>List&lt;T&gt;</code> or by explicitly 
+declaring list items using <code>ts-list-group-item</code>, as shown below:
+<br />
+<br />
+
+<ts-tabs>
+    <ts-tab-items>
+        <ts-tab-item bs-item-link="tabs-lgps-src" bs-item-text="Markup"></ts-tab-item>
+        <ts-tab-item bs-item-link="tabs-lgps-demo" bs-item-text="Demo"></ts-tab-item>
+    </ts-tab-items>
+    <ts-tab-contents>
+        <ts-tab-content bs-item-link="tabs-lgps-src">
+            <br />
+            <br />
+
+            <strong>Usage</strong><br /><br />
+<pre>
+@@{ 
+    var someList = new List<string>
+    {
+        "One",
+        "Two",
+        "Three"
+    };
+}
+
+<span class="ts-tag">&lt;ts-list-group bs-list-items="someList"&gt;</span>
+<span class="ts-tag">&lt;/ts-list-group&gt;</span>
+
+<span class="ts-tag">&lt;ts-list-group&gt;</span>
+    <span class="ts-tag">&lt;ts-list-group-item&gt;</span>1<span class="ts-tag">&lt;/ts-list-group-item&gt;</span>
+    <span class="ts-tag">&lt;ts-list-group-item&gt;</span>2<span class="ts-tag">&lt;/ts-list-group-item&gt;</span>
+    <span class="ts-tag">&lt;ts-list-group-item&gt;</span>3<span class="ts-tag">&lt;/ts-list-group-item&gt;</span>
+<span class="ts-tag">&lt;/ts-list-group&gt;</span>
+</pre>
+        </ts-tab-content>
+        <ts-tab-content bs-item-link="tabs-lgps-demo">
+            <br />
+            <br />
+            @{ 
+                var someList = new List<string>
+                {
+                    "One",
+                    "Two",
+                    "Three"
+                };
+            }
+            <ts-list-group bs-list-items="someList"></ts-list-group>
+
+            <ts-list-group>
+                <ts-list-group-item>1</ts-list-group-item>
+                <ts-list-group-item>2</ts-list-group-item>
+                <ts-list-group-item>3</ts-list-group-item>
+            </ts-list-group>
         </ts-tab-content>
     </ts-tab-contents>
 </ts-tabs>
