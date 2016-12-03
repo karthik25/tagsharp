@@ -5,9 +5,56 @@
 <br />
 <h3><strong>What is Tag#?</strong></h3>
 <strong>Tag#</strong> is a set of useful tag helpers for .net core. At this point, only a subset of bootstrap tag helpers 
-are present. In the future I intend to add a lot more! - both on the bootstrap side and others!!
+are present. In the future I intend to add a lot more! - both on the bootstrap side and others!! To give you a quick idea, 
+conside the snippets below. Left represents a bootstrap tab component using tag helpers and the right without them. Left may
+seem more verbose, but its not, with intellisense. Look at all the attributes on the right that you <strong>don't</strong>
+have to remember :)
 <br />
 <br />
+
+<div class="row">
+    <div class="col-md-5">
+        <pre>
+<span class="ts-tag">&lt;ts-tabs&gt;</span>
+    <span class="ts-tag">&lt;ts-tab-items&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-first" bs-item-text="First"&gt;</span><span class="ts-tag">&lt;/ts-tab-item&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-second" bs-item-text="Second"&gt;</span><span class="ts-tag">&lt;/ts-tab-item&gt;</span>
+    <span class="ts-tag">&lt;/ts-tab-items&gt;</span>
+    <span class="ts-tag">&lt;ts-tab-contents&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-content bs-item-link="d-first"&gt;</span>
+            ...
+        <span class="ts-tag">&lt;/ts-tab-content&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-content bs-item-link="d-second"&gt;</span>
+            ...
+        <span class="ts-tag">&lt;/ts-tab-content&gt;</span>
+    <span class="ts-tag">&lt;/ts-tab-contents&gt;</span>
+<span class="ts-tag">&lt;/ts-tabs&gt;</span>
+        </pre>
+    </div>
+    <div class="col-md-1 text-center">
+        <br /><br /><br /><br />
+        <i class="fa fa-arrow-right fa-2x"></i>
+    </div>
+    <div class="col-md-5">
+        <pre>
+&lt;ul class="nav nav-tabs" data-tabs="tabs" &gt;
+    &lt;li class="active"&gt;&lt;a href="#d-first" data-toggle="tab"&gt;First&lt;/a&gt;&lt;/li&gt; 
+    &lt;li class=""&gt;&lt;a href="#d-second" data-toggle="tab"&gt;Second&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+    &lt;div class="tab-pane active" id="d-first"&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div class="tab-pane" id="d-second"&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;            
+        </pre>
+    </div>
+</div>
+
+<br />
+
 <h3 id="top"><strong>Sections</strong></h3>
 
 <a href="#t-alerts" class="section">Alerts</a> | <a href="#t-badges" class="section">Badges</a> |
@@ -521,6 +568,12 @@ Tag# does that for you! Also, none of the sections (<code>ts-modal-*</code>) are
 <h3 id="t-panels"><strong>Panels</strong></h3>
 <br />
 
+Like modals, panels can also have a header, body and footer and any of these are optional. You can use <code>bs-css-class</code>
+to create various contextual panels or use the quick shortcuts like <code>ts-panel-primary</code> etc. Panles also support the 
+<code>bs-panel-id</code> property and just like the modals, you don't have to prefix it with a <strong>#</strong>!
+<br />
+<br />
+
 <ts-tabs>
     <ts-tab-items>
         <ts-tab-item bs-item-link="tabs-src" bs-item-text="Markup"></ts-tab-item>
@@ -559,6 +612,8 @@ Tag# does that for you! Also, none of the sections (<code>ts-modal-*</code>) are
 <span class="ts-tag">&lt;ts-panel-danger&gt;</span>...<span class="ts-tag">&lt;/ts-panel-danger&gt;</span>
 <span class="ts-tag">&lt;ts-panel-success&gt;</span>...<span class="ts-tag">&lt;/ts-panel-success&gt;</span>
 <span class="ts-tag">&lt;ts-panel-primary&gt;</span>...<span class="ts-tag">&lt;/ts-panel-primary&gt;</span>
+
+<span class="ts-tag">&lt;ts-panel bs-css-class="panel-success"&gt;</span>...<span class="ts-tag">&lt;/ts-panel&gt;</span>
 </pre>
 
         </ts-tab-content>
@@ -568,6 +623,20 @@ Tag# does that for you! Also, none of the sections (<code>ts-modal-*</code>) are
             <ts-panel>
                 <ts-panel-header>
                     <strong>Default Panel</strong>
+                </ts-panel-header>
+                <ts-panel-body>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                    versions of Lorem Ipsum.
+                </ts-panel-body>
+            </ts-panel>
+
+            <ts-panel bs-css-class="panel-success">
+                <ts-panel-header>
+                    <strong>Success Panel using Attributes</strong>
                 </ts-panel-header>
                 <ts-panel-body>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -592,6 +661,12 @@ Tag# does that for you! Also, none of the sections (<code>ts-modal-*</code>) are
 <h3 id="t-tabs"><strong>Tabs</strong></h3>
 <br />
 
+This method involves creating tabs without the use of any javascript. The usage example given below is straight forward. But
+there are quite a few things of interest. They are, (1) <code>bs-item-link</code> attributes of the tab item and tab content
+must match and (2) Just like modals and panels, you do not have to prefix them with <strong>#</strong>.
+<br />
+<br />
+
 <ts-tabs>
     <ts-tab-items>
         <ts-tab-item bs-item-link="tabs-ta-src" bs-item-text="Markup"></ts-tab-item>
@@ -607,7 +682,7 @@ Tag# does that for you! Also, none of the sections (<code>ts-modal-*</code>) are
 <span class="ts-tag">&lt;ts-tabs&gt;</span>
     <span class="ts-tag">&lt;ts-tab-items&gt;</span>
         <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-first" bs-item-text="First"&gt;</span><span class="ts-tag">&lt;/ts-tab-item&gt;</span>
-        <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-second" bs-item-text="Second"&gt;</span><span class="ts-tag">&gt;/ts-tab-item&gt;</span>
+        <span class="ts-tag">&lt;ts-tab-item bs-item-link="d-second" bs-item-text="Second"&gt;</span><span class="ts-tag">&lt;/ts-tab-item&gt;</span>
     <span class="ts-tag">&lt;/ts-tab-items&gt;</span>
     <span class="ts-tag">&lt;ts-tab-contents&gt;</span>
         <span class="ts-tag">&lt;ts-tab-content bs-item-link="d-first"&gt;</span>
