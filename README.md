@@ -3,7 +3,7 @@
 Tag# collection of .net core tag helpers. The plan is to include as many as possible. At this point only bootstrap 
 is available.
 
-In order to start using the Tag# tag helpers, first use nuget to include the package. then open _ViewImports.cshtml to 
+In order to start using the Tag# tag helpers, first use nuget to include the package - search for `TagSharp`. then open _ViewImports.cshtml to 
 indicate that you intend to use the Tag# tag helpers as shown below:
 
 ```csharp
