@@ -42,3 +42,5 @@ Similarly in order to create a panel, here is what you can do.
 ```
 
 There is a demo included in this project to fully explain the entire list of possiblities!!
+
+Its a work in progress and I am still learning the nuances of tag helpers, so it will take a few iterations to be good, leave alone perfect! Thanks for looking!!
